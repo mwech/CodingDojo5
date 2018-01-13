@@ -112,5 +112,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\lego1.jpg" />
+    <Resource Include="img\lego2.jpg" />
+    <Resource Include="img\lego3.jpg" />
+    <Resource Include="img\lego4.jpg" />
+    <Resource Include="img\playmobil1.jpg" />
+    <Resource Include="img\playmobil2.jpg" />
+    <Resource Include="img\playmobil3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

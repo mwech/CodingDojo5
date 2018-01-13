@@ -22,10 +22,5 @@ namespace CodingDojo5.ViewModel
             if (ItemList == null) ItemList = new ObservableCollection<ItemVM>();
             ItemList.Add(item);
         }
-
-
-
-
-
     }
 }
