@@ -16,5 +16,53 @@
             <ColumnDefinition Width="180"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <ListBox Grid.Row="0" Grid.Column="0" Margin="10" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="3" BorderBrush="Black" BorderThickness="3" Width="130">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Image}" Height="50"  Width="50"></Image>
+                            <Label Content="{Binding Description}" VerticalAlignment="Center"></Label>
+                        </StackPanel>                        
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding SelectedItem.ItemList}" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="3" BorderBrush="Black" BorderThickness="3" Width="150">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="50" Width="50" Source="{Binding Image}"></Image>
+                                <Label Content="{Binding Description}" ></Label>
+                                <Label Content="{Binding AgeRecommendation}" ></Label>
+                            </StackPanel>
+                            <Button Content="Buy" 
+                                        Command="{Binding DataContext.BuyBtnClicked, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        CommandParameter="{Binding}"
+                                        Height="35" Width="190" HorizontalAlignment="Center" Margin="3"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Cart}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding Image}" Width="50" Height="50" Margin="10"></Image>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Window>

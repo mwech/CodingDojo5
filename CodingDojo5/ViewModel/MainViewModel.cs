@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using System;
+using System.Windows.Media.Imaging;
 
 namespace CodingDojo5.ViewModel
 {
@@ -48,7 +49,15 @@ namespace CodingDojo5.ViewModel
 
         private void GenerateDemoData()
         {
-           // Items.Add(new ItemVM("Playmobil", "3+", );
+            Items.Add(new ItemVM("Lego", "", new BitmapImage(new Uri("img/lego1.jpg",UriKind.Relative))));
+            Items.Add(new ItemVM("Playmobil", "", new BitmapImage(new Uri("img/playmobil1.jpg", UriKind.Relative))));
+            Items[Items.Count - 1].addItem(new ItemVM("Playmobil1", "3+", new BitmapImage(new Uri("img/playmobil1.jpg", UriKind.Relative))));
+            Items[Items.Count - 1].addItem(new ItemVM("Playmobil2", "3+", new BitmapImage(new Uri("img/playmobil2.jpg", UriKind.Relative))));
+            Items[Items.Count - 1].addItem(new ItemVM("Playmobil3", "3+", new BitmapImage(new Uri("img/playmobil3.jpg", UriKind.Relative))));
+            Items[Items.Count - 2].addItem(new ItemVM("Lego1", "5+", new BitmapImage(new Uri("img/lego1.jpg", UriKind.Relative))));
+            Items[Items.Count - 2].addItem(new ItemVM("Lego2", "5+", new BitmapImage(new Uri("img/lego2.jpg", UriKind.Relative))));
+            Items[Items.Count - 2].addItem(new ItemVM("Lego3", "5+", new BitmapImage(new Uri("img/lego3.jpg", UriKind.Relative))));
+            Items[Items.Count - 2].addItem(new ItemVM("Lego4", "5+", new BitmapImage(new Uri("img/lego4.jpg", UriKind.Relative))));
         }
     }
 }
